@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powderpuff Rescue - Zweite Chance e.V.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #1a9b8e;
+            --primary-dark: #0d4a47;
+            --accent-light: #e8f4f8;
+            --text-dark: #1a2332;
+            --text-light: #6b7280;
+            --border-soft: #d1d5db;
+            --success-green: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-teal) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-teal) 0%, #26a99b 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--success-green);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 1rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-teal);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--accent-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .photography-note {
+            background: white;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-teal);
+            border-radius: 4px;
+            margin-top: 2rem;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Dog Gallery */
+        #gallery {
+            background-color: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .dog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .dog-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: var(--border-soft);
+        }
+
+        .dog-info {
+            padding: 1.5rem;
+        }
+
+        .dog-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .dog-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Donations Section */
+        #donations {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-teal) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #donations h2 {
+            color: white;
+        }
+
+        #donations h2:after {
+            background-color: var(--success-green);
+        }
+
+        .donation-content {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .donation-content p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .donation-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .paypal-button {
+            background-color: var(--success-green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .paypal-button:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+
+        .telegram-link {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            border: 2px solid white;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .telegram-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        #contact {
+            background-color: var(--accent-light);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-soft);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(26, 155, 142, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background-color: var(--primary-teal);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .donation-buttons {
+                flex-direction: column;
+            }
+
+            .paypal-button,
+            .telegram-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* CTF Flag Hidden in CSS */
+        /* FLAG{CSS_COMMENT_HUNTER_LEVEL_1} - This flag is visible to anyone inspecting the CSS */
+    </style>
+</head>
+<body>
+    <!-- CTF Note: Start looking for clues in the HTML structure -->
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <div>
+                <div class="logo">🐾 Powderpuff Rescue</div>
+                <div class="tagline">Zweite Chance e.V. - Von Kempten in die Welt</div>
+            </div>
+            <nav>
+                <a href="#about">Über Uns</a>
+                <a href="#gallery">Unsere Hunde</a>
+                <a href="#donations">Spenden</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Rettung. Liebe. Hoffnung.</h1>
+        <p>Wir geben verlassenen Hunden eine zweite Chance auf ein glückliches Leben</p>
+        <a href="#gallery" class="cta-button">Unsere Hunde kennenlernen</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>Über Powderpuff Rescue</h2>
+        <div class="about-content">
+            <p>
+                Powderpuff Rescue - Zweite Chance e.V. ist eine gemeinnützige Organisation, die sich der Rettung und dem Schutz verlassener Hunde widmet. Seit unserer Gründung in Kempten haben wir hunderten von Hunden geholfen, ihre verlorene Würde wiederzuerlangen und ein liebevolles Zuhause zu finden.
+            </p>
+            <p>
+                Unsere Mission ist es, jeden Hund – unabhängig von Herkunft, Alter oder Gesundheitszustand – mit Liebe, medizinischer Versorgung und professionellem Training zu versorgen. Wir glauben daran, dass jedes Leben wertvoll ist und verdient gerettet zu werden.
+            </p>
+            <p>
+                Von Kempten in die Welt – Das ist unser Motto. Wir vermitteln Hunde nicht nur regional, sondern helfen auch bei Rettungs- und Vermittlungsprojekten international.
+            </p>
+            <div class="photography-note">
+                🎥 <strong>Ein persönliches Wort:</strong> Die Fotografie ist meine große Leidenschaft, und ich fotografiere alle unsere Hunde selbst. Jedes Bild erzählt eine Geschichte von Hoffnung und Transformation. Diese Fotos helfen potenziellen Adoptern, sich in die Persönlichkeit jedes Hundes zu verlieben.
+            </div>
+        </div>
+    </section>
+
+    <!-- Dog Gallery Section -->
+    <section id="gallery" class="container">
+        <h2>Unsere Hunde</h2>
+        <!-- CTF Hint: Each dog has a story, and some stories have hidden messages -->
+        <div class="gallery-grid">
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Max" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Max</div>
+                    <div class="dog-description">Ein energetischer Golden Retriever, der die Sonne liebt und bereit ist, neue Abenteuer zu erleben. Perfect für eine aktive Familie!</div>
+                </div>
+                <!-- CTF: element_1_dog_max -->
+            </div>
+
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop" alt="Luna" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Luna</div>
+                    <div class="dog-description">Eine sanfte Border Collie mit wunderschönen Augen. Sie liebt Kuscheln auf der Couch und lange Spaziergänge im Wald.</div>
+                </div>
+                <!-- CTF: element_2_dog_luna -->
+            </div>
+
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1587062040671-cd80152caa72?w=400&h=300&fit=crop" alt="Charlie" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Charlie</div>
+                    <div class="dog-description">Ein verspielter Beagle mit großem Herz. Charlie ist immer in der Stimmung zum Spielen und liebt Hundesnacks!</div>
+                </div>
+                <!-- CTF: element_3_dog_charlie -->
+            </div>
+
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1608848541803-ba4f8c70ae0b?w=400&h=300&fit=crop" alt="Bella" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Bella</div>
+                    <div class="dog-description">Eine elegante Dachshund mit einem großen Charakter. Sie wartet auf jemanden, der ihre kleine Größe und große Persönlichkeit schätzt.</div>
+                </div>
+                <!-- CTF: element_4_dog_bella -->
+            </div>
+
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=400&h=300&fit=crop" alt="Rocky" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Rocky</div>
+                    <div class="dog-description">Ein starker und loyaler Schäferhund, der sein Vertrauen verdient hat. Rocky ist bereit für eine liebevolle Familie.</div>
+                </div>
+                <!-- CTF: element_5_dog_rocky -->
+            </div>
+
+            <div class="dog-card">
+                <img src="https://images.unsplash.com/photo-1611003228941-98852ba62227?w=400&h=300&fit=crop" alt="Sophie" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Sophie</div>
+                    <div class="dog-description">Eine liebevolle Spaniel-Mischling, die mit ihrer sanften Natur alle Herzen bricht. Sophie braucht ein ruhiges Zuhause zum Entspannen.</div>
+                </div>
+                <!-- CTF: element_6_dog_sophie -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Donations Section -->
+    <section id="donations">
+        <div class="container">
+            <h2>Unterstützen Sie unsere Rettungsmission</h2>
+            <div class="donation-content">
+                <p>
+                    Ihre Spende hilft uns, mehr Hunde zu retten, medizinische Versorgung bereitzustellen und ihnen ein zweites Leben zu geben. Jeder Beitrag macht einen Unterschied!
+                </p>
+                <div class="donation-buttons">
+                    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" class="paypal-button" target="_blank">💳 Spenden via PayPal</a>
+                    <!-- CTF HINT: This Telegram link is temporary and will be removed in future versions.
+                         It's being added now so that when the site is archived in the Wayback Machine,
+                         security researchers can find this hidden communication channel during a CTF challenge.
+                         Future versions of this site will remove this link entirely.
+                         FLAG_LOCATION: /t.me/ZweiteChanceKempten -->
+                    <a href="https://t.me/ZweiteChanceKempten" class="telegram-link" target="_blank">📱 Telegram Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="container">
+        <h2>Kontaktieren Sie Uns</h2>
+        <!-- CTF: The form below is not functional for this demo, but includes data-flags in comments -->
+        <div class="form-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+                    <!-- CTF: form_field_1_name -->
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail *</label>
+                    <input type="email" id="email" name="email" required placeholder="ihre.email@example.de">
+                    <!-- CTF: form_field_2_email -->
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Nachricht *</label>
+                    <textarea id="message" name="message" required placeholder="Ihre Nachricht..."></textarea>
+                    <!-- CTF: form_field_3_message -->
+                </div>
+
+                <button type="submit" class="submit-button">Nachricht senden</button>
+            </form>
+            <!-- CTF: Form submission script disabled for demo purposes -->
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.');
+                    this.reset();
+                });
+                // CTF: Hidden in JavaScript console - FLAG{INSPECT_ELEMENT_MASTER}
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Powderpuff Rescue - Zweite Chance e.V. | Von Kempten in die Welt | Alle Hunde verdienen eine zweite Chance.</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">🐾 Gegründet mit Liebe für unsere vierbeinigen Freunde</p>
+        <!-- CTF: The entire footer section contains encoded metadata for advanced researchers -->
+    </footer>
+
+    <!-- 
+    ╔════════════════════════════════════════════════════════════════════════════════╗
+    ║  CTF CHALLENGE NOTES (Hidden from typical users, visible in Page Source)       ║
+    ║════════════════════════════════════════════════════════════════════════════════║
+    ║  This website contains multiple hidden flags and clues:                         ║
+    ║                                                                                 ║
+    ║  LEVEL 1: Check the CSS file - there's a comment with a flag                   ║
+    ║  LEVEL 2: Inspect individual dog cards - look for HTML comments                ║
+    ║  LEVEL 3: Form fields have comments with clues                                 ║
+    ║  LEVEL 4: Check the Telegram link comment for temporary infrastructure hints   ║
+    ║  LEVEL 5: JavaScript console contains hidden messages                          ║
+    ║  LEVEL 6: Use the Wayback Machine on archived versions to find removed links   ║
+    ║                                                                                 ║
+    ║  All flags follow the pattern: FLAG{...} or element_X_... or form_field_X_...  ║
+    ║════════════════════════════════════════════════════════════════════════════════║
+    -->
+
+</body>
+</html>
