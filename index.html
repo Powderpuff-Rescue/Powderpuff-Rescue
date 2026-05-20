@@ -232,6 +232,20 @@
             justify-content: center;
         }
 
+        .dog-image.placeholder {
+            flex-direction: column;
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .placeholder-text {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
         .dog-info {
             padding: 1.5rem;
         }
@@ -505,7 +519,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Luna - Border Collie Mix" class="dog-image">
+                <img src="https://images.unsplash.com/photo-1586941487619-79ecb5d7a3f0?w=400&h=300&fit=crop" alt="Luna - Border Collie Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Luna</div>
                     <div class="dog-breed">Border Collie-Mix</div>
@@ -515,7 +529,10 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?w=400&h=300&fit=crop" alt="Charlie - Beagle Mix" class="dog-image">
+                <div class="dog-image placeholder">
+                    <span>📸</span>
+                    <div class="placeholder-text">Bild folgt in Kürze</div>
+                </div>
                 <div class="dog-info">
                     <div class="dog-name">Charlie</div>
                     <div class="dog-breed">Beagle-Mix</div>
@@ -555,7 +572,10 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1612255060519-98f984ad6d41?w=400&h=300&fit=crop" alt="Ginger - Mischling" class="dog-image">
+                <div class="dog-image placeholder">
+                    <span>🐕</span>
+                    <div class="placeholder-text">Bild folgt in Kürze</div>
+                </div>
                 <div class="dog-info">
                     <div class="dog-name">Ginger</div>
                     <div class="dog-breed">Mischling (Größe M)</div>
