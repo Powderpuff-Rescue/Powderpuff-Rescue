@@ -209,17 +209,60 @@
             margin-top: 3rem;
         }
 
+        .gallery-section-title {
+            grid-column: 1 / -1;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gallery-section-title:first-child {
+            margin-top: 0;
+        }
+
         .dog-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .dog-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .dog-card.adopted {
+            opacity: 0.75;
+            filter: grayscale(30%);
+        }
+
+        .dog-card.adopted:hover {
+            transform: translateY(-4px);
+        }
+
+        .adopted-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--success-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .dog-image {
@@ -268,6 +311,15 @@
             font-size: 0.95rem;
             color: var(--text-light);
             line-height: 1.6;
+        }
+
+        .adoption-story {
+            font-size: 0.9rem;
+            color: var(--success-green);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-soft);
         }
 
         /* Donations Section */
@@ -443,6 +495,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .gallery-section-title {
+                grid-column: 1 / -1;
+            }
+
             .donation-buttons {
                 flex-direction: column;
             }
@@ -508,6 +564,8 @@
         <h2>Unsere Hunde</h2>
         <!-- CTF Hint: Each dog has a story, and some stories have hidden messages -->
         <div class="gallery-grid">
+            <div class="gallery-section-title">🔍 Aktuelle Schützlinge (Suchen noch ein Zuhause)</div>
+
             <div class="dog-card">
                 <img src="https://images.unsplash.com/photo-1608848461950-0fed2357cac1?w=400&h=300&fit=crop" alt="Max - Schäferhund Mix" class="dog-image">
                 <div class="dog-info">
@@ -582,6 +640,33 @@
                     <div class="dog-description">Ginger ist eine wunderschöne 3-jährige Mischling-Hündin mit rötlichem Fell und temperamentvoller Natur. Sie wurde ausgesetzt gefunden, aber hat schnell Vertrauen zu Menschen gefasst. Ginger ist verspielt, freundlich und möchte endlich in einer Familie aufwachsen. Sie passt zu aktiven Menschen, die Zeit zum Spielen und Trainieren haben.</div>
                 </div>
                 <!-- CTF: element_7_dog_ginger -->
+            </div>
+
+            <!-- Success Stories / Adopted Dogs Section -->
+            <div class="gallery-section-title">💚 Success Stories (Bereits vermittelt)</div>
+
+            <div class="dog-card adopted">
+                <div class="adopted-badge">✅ Vermittelt</div>
+                <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Duke - Deutsch Kurzhaar Mix" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Duke</div>
+                    <div class="dog-breed">Deutsch Kurzhaar-Mix</div>
+                    <div class="dog-description">Duke war ein scheuer Straßenhund, der bei uns Vertrauen zu Menschen aufgebaut hat. Mit viel Geduld und Training ist er zu einem wundervollen Begleiter herangewachsen. Heute lebt er glücklich mit einer Familie in München und liebt lange Wanderungen in den Bergen.</div>
+                    <div class="adoption-story">📍 "Duke ist Teil unserer Familie geworden. Jeden Tag aufs Neue dankbar!" - Die Familie Müller</div>
+                </div>
+                <!-- CTF: element_8_dog_duke_adopted -->
+            </div>
+
+            <div class="dog-card adopted">
+                <div class="adopted-badge">✅ Vermittelt</div>
+                <img src="https://images.unsplash.com/photo-1612255060519-98f984ad6d41?w=400&h=300&fit=crop" alt="Molly - Mixed Breed" class="dog-image">
+                <div class="dog-info">
+                    <div class="dog-name">Molly</div>
+                    <div class="dog-breed">Mischling</div>
+                    <div class="dog-description">Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wieder Vertrauen gefasst. Eine liebevolle Seniorin hat sie adoptiert und schenkt ihr täglich die Liebe, die sie verdient.</div>
+                    <div class="adoption-story">📍 "Molly ist mein bester Freund. Danke für alles!" - Frau Schmidt, 74</div>
+                </div>
+                <!-- CTF: element_9_dog_molly_adopted -->
             </div>
         </div>
     </section>
@@ -664,6 +749,7 @@
     ║  LEVEL 4: Check the Telegram link comment for temporary infrastructure hints   ║
     ║  LEVEL 5: JavaScript console contains hidden messages                          ║
     ║  LEVEL 6: Use the Wayback Machine on archived versions to find removed links   ║
+    ║  LEVEL 7: Check adoption stories - they contain hidden information             ║
     ║                                                                                 ║
     ║  All flags follow the pattern: FLAG{...} or element_X_... or form_field_X_...  ║
     ║══════════════════════════════════════════════════════════════════╝
