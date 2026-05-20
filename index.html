@@ -76,16 +76,34 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-teal) 0%, #26a99b 100%);
             color: white;
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
             text-align: center;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z" fill="%23ffffff"[...]
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z" fill="%23ffffff" opacity="0.1"/></svg>');
             background-size: cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '🐾';
+            font-size: 8rem;
+            opacity: 0.1;
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .hero p {
@@ -93,6 +111,8 @@
             opacity: 0.95;
             max-width: 600px;
             margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-button {
@@ -107,6 +127,8 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-button:hover {
@@ -172,6 +194,7 @@
             margin-top: 2rem;
             font-style: italic;
             color: var(--text-dark);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         /* Dog Gallery */
@@ -188,7 +211,7 @@
 
         .dog-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -196,14 +219,18 @@
 
         .dog-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
 
         .dog-image {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
-            background-color: var(--border-soft);
+            background: linear-gradient(135deg, var(--primary-teal) 0%, #26a99b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
         }
 
         .dog-info {
@@ -220,6 +247,7 @@
         .dog-description {
             font-size: 0.95rem;
             color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* Donations Section */
@@ -441,16 +469,16 @@
         <h2>Über Powderpuff Rescue</h2>
         <div class="about-content">
             <p>
-                Powderpuff Rescue - Zweite Chance e.V. ist eine gemeinnützige Organisation, die sich der Rettung und dem Schutz verlassener Hunde widmet. Seit unserer Gründung in Kempten haben [...]
+                Powderpuff Rescue - Zweite Chance e.V. ist eine gemeinnützige Organisation, die sich der Rettung und dem Schutz verlassener Hunde widmet. Seit unserer Gründung in Kempten haben wir hunderten von Hunden geholfen, ein neues Zuhause zu finden und ein erfülltes Leben zu führen.
             </p>
             <p>
-                Unsere Mission ist es, jeden Hund – unabhängig von Herkunft, Alter oder Gesundheitszustand – mit Liebe, medizinischer Versorgung und professionellem Training zu versorgen. Wi[...]
+                Unsere Mission ist es, jeden Hund – unabhängig von Herkunft, Alter oder Gesundheitszustand – mit Liebe, medizinischer Versorgung und professionellem Training zu versorgen. Wir glauben daran, dass jeder Hund ein zweites Chancenverdient, und wir arbeiten unermüdlich, um diese zu ermöglichen.
             </p>
             <p>
-                Von Kempten in die Welt – Das ist unser Motto. Wir vermitteln Hunde nicht nur regional, sondern helfen auch bei Rettungs- und Vermittlungsprojekten international.
+                Von Kempten in die Welt – Das ist unser Motto. Wir vermitteln Hunde nicht nur regional, sondern helfen auch bei Rettungs- und Vermittlungsprojekten international. Unsere Arbeit wird von engagierten Freiwilligen und großzügigen Spendern unterstützt, die unsere Vision teilen.
             </p>
             <div class="photography-note">
-                🎥 <strong>Ein persönliches Wort:</strong> Die Fotografie ist meine große Leidenschaft, und ich fotografiere alle unsere Hunde selbst. Jedes Bild erzählt eine Geschichte von [...]
+                🎥 <strong>Ein persönliches Wort:</strong> Die Leidenschaft für diese Arbeit treibt uns an. Jedes Bild, jede Geschichte, und jedes Tier, das wir retten, erfüllt uns mit Hoffnung und Dankbarkeit. Zusammen können wir die Welt für diese wundervollen Geschöpfe verändern.
             </div>
         </div>
     </section>
@@ -461,7 +489,7 @@
         <!-- CTF Hint: Each dog has a story, and some stories have hidden messages -->
         <div class="gallery-grid">
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Max - Golden Retriever" class="dog-image">
+                <div class="dog-image">🐕</div>
                 <div class="dog-info">
                     <div class="dog-name">Max</div>
                     <div class="dog-description">Ein energetischer Golden Retriever, der die Sonne liebt und bereit ist, neue Abenteuer zu erleben. Perfect für eine aktive Familie!</div>
@@ -470,7 +498,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1586941487619-79ecb5d7a3f0?w=400&h=300&fit=crop" alt="Luna - Border Collie" class="dog-image">
+                <div class="dog-image">🐕‍🦺</div>
                 <div class="dog-info">
                     <div class="dog-name">Luna</div>
                     <div class="dog-description">Eine sanfte Border Collie mit wunderschönen Augen. Sie liebt Kuscheln auf der Couch und lange Spaziergänge im Wald.</div>
@@ -479,7 +507,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=400&h=300&fit=crop" alt="Charlie - Beagle" class="dog-image">
+                <div class="dog-image">🐕</div>
                 <div class="dog-info">
                     <div class="dog-name">Charlie</div>
                     <div class="dog-description">Ein verspielter Beagle mit großem Herz. Charlie ist immer in der Stimmung zum Spielen und liebt Hundesnacks!</div>
@@ -488,7 +516,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1583511655857-d19db992cb74?w=400&h=300&fit=crop" alt="Bella - Dachshund" class="dog-image">
+                <div class="dog-image">🐶</div>
                 <div class="dog-info">
                     <div class="dog-name">Bella</div>
                     <div class="dog-description">Eine elegante Dachshund mit einem großen Charakter. Sie wartet auf jemanden, der ihre kleine Größe und große Persönlichkeit schätzt.</div>
@@ -497,7 +525,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?w=400&h=300&fit=crop" alt="Rocky - Schäferhund" class="dog-image">
+                <div class="dog-image">🐕</div>
                 <div class="dog-info">
                     <div class="dog-name">Rocky</div>
                     <div class="dog-description">Ein starker und loyaler Schäferhund, der sein Vertrauen verdient hat. Rocky ist bereit für eine liebevolle Familie.</div>
@@ -506,7 +534,7 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1601758228758-c3c91ecc8ed0?w=400&h=300&fit=crop" alt="Sophie - Spaniel" class="dog-image">
+                <div class="dog-image">🐕</div>
                 <div class="dog-info">
                     <div class="dog-name">Sophie</div>
                     <div class="dog-description">Eine liebevolle Spaniel-Mischling, die mit ihrer sanften Natur alle Herzen bricht. Sophie braucht ein ruhiges Zuhause zum Entspannen.</div>
@@ -515,10 +543,10 @@
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=300&fit=crop" alt="Ginger - Pferd (überraschungsgast!)" class="dog-image">
+                <div class="dog-image">🐴</div>
                 <div class="dog-info">
                     <div class="dog-name">Ginger 🐴</div>
-                    <div class="dog-description">Überraschung! Ginger ist eigentlich ein Pferd, aber hat genauso viel Liebe verdient wie unsere Hunde. Dieses sanfte Flüchttier sucht auch ein neues Zuhause!</div>
+                    <div class="dog-description">Überraschung! Ginger ist eigentlich ein Pferd, aber hat genauso viel Liebe verdient wie unsere Hunde. Dieses sanfte Flüchttier sucht auch ein neues Zuhause mit viel Platz zum Galoppieren.</div>
                 </div>
                 <!-- CTF: element_7_animal_ginger_horse -->
             </div>
@@ -534,7 +562,7 @@
                     Ihre Spende hilft uns, mehr Hunde zu retten, medizinische Versorgung bereitzustellen und ihnen ein zweites Leben zu geben. Jeder Beitrag macht einen Unterschied!
                 </p>
                 <div class="donation-buttons">
-                    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" class="paypal-button" target="_blank">💳 Spenden via PayPal</a>
+                    <a href="mailto:powderpuff-rescue@proton.me?subject=Spende%20for%20Powderpuff%20Rescue&body=Ich%20möchte%20Powderpuff%20Rescue%20unterstützen." class="paypal-button">💳 Spenden via E-Mail</a>
                     <!-- CTF HINT: This Telegram link is temporary and will be removed in future versions.
                          It's being added now so that when the site is archived in the Wayback Machine,
                          security researchers can find this hidden communication channel during a CTF challenge.
@@ -592,9 +620,9 @@
     </footer>
 
     <!-- 
-    ╔══════════════════════════════════════════════════════════════════════╗
+    ╔══════════════════════════════════════════════════════════════════╗
     ║  CTF CHALLENGE NOTES (Hidden from typical users, visible in Page Source)       ║
-    ║══════════════════════════════════════════════════════════════════════╗
+    ║══════════════════════════════════════════════════════════════════╗
     ║  This website contains multiple hidden flags and clues:                         ║
     ║                                                                                 ║
     ║  LEVEL 1: Check the CSS file - there's a comment with a flag                   ║
@@ -605,7 +633,7 @@
     ║  LEVEL 6: Use the Wayback Machine on archived versions to find removed links   ║
     ║                                                                                 ║
     ║  All flags follow the pattern: FLAG{...} or element_X_... or form_field_X_...  ║
-    ║══════════════════════════════════════════════════════════════════════╗
+    ║══════════════════════════════════════════════════════════════════╝
     -->
 
 </body>
