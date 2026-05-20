@@ -174,9 +174,31 @@
             background-color: var(--accent-light);
         }
 
-        .about-content {
-            max-width: 800px;
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            max-width: 1000px;
             margin: 2rem auto;
+        }
+
+        .about-image {
+            flex-shrink: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
             font-size: 1.05rem;
             line-height: 1.8;
             color: var(--text-dark);
@@ -191,7 +213,7 @@
             padding: 1.5rem;
             border-left: 4px solid var(--primary-teal);
             border-radius: 4px;
-            margin-top: 2rem;
+            margin-bottom: 1.5rem;
             font-style: italic;
             color: var(--text-dark);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -491,6 +513,15 @@
                 font-size: 1.8rem;
             }
 
+            .about-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -543,25 +574,30 @@
     <!-- About Section -->
     <section id="about" class="container">
         <h2>Über Powderpuff Rescue</h2>
-        <div class="about-content">
-            <div class="photography-note">
-                <strong>Ein persönliches Wort von unserer Gründerin:</strong>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="Waltraud.jpg" alt="Waltraud - Gründerin von Powderpuff Rescue">
             </div>
-            <p>
-                Hand aufs Herz: Eigentlich wollte ich nie ‚die Frau mit den Hunden' werden. Aber wer einmal anfängt, kann nicht mehr aufhören. Wenn man diese ganzen kleinen Notfälle sieht, die überall auf der Straße landen, dann schaltet man den Kopf aus und macht einfach.
-            </p>
-            <p>
-                Mein Alltag ist seit Jahren pures Chaos. Morgens Mails, mittags irgendwo auf der Autobahn, abends noch schnell die Buchhaltung vom Shelter fertigmachen – meistens während ich nebenbei noch zwei Welpen füttere, die nicht stillhalten wollen. Viele fragen mich, wie ich das alles koordiniere, aber ehrlich gesagt: Ich mach das einfach irgendwie. Man braucht ein gutes Netzwerk und die richtigen Leute an den richtigen Stellen, dann läuft der Rest fast von allein.
-            </p>
-            <p>
-                Manchmal schaue ich mir meine Fotos auf Instagram an und denke selbst: ‚Wahnsinn, wie machst du das?'. Aber hinter den Kulissen ist es echt oft nur noch anstrengend. Ich bin meistens die Erste, die auf den Beinen ist, und die Letzte, die den Laptop zuklappt.
-            </p>
-            <p>
-                Ich will keine Auszeichnungen und kein großes Lob. Ich will nur, dass die Logistik steht und die Tiere sicher ankommen. Wenn wir mal wieder einen Transport aus dem Ausland durchbekommen haben, ist das der einzige Lohn, der für mich zählt. Auch wenn die Leute manchmal komisch gucken, wenn ich ständig an meinem Handy hänge oder plötzlich weg muss – meine Hunde warten nicht auf eine Genehmigung, die brauchen Hilfe.
-            </p>
-            <p>
-                Also: Willkommen in meiner Welt. Es ist laut, es ist dreckig, es ist stressig – aber wenigstens ist es echt.
-            </p>
+            <div class="about-content">
+                <div class="photography-note">
+                    <strong>Ein persönliches Wort von unserer Gründerin Waltraud:</strong>
+                </div>
+                <p>
+                    Hand aufs Herz: Eigentlich wollte ich nie ‚die Frau mit den Hunden' werden. Aber wer einmal anfängt, kann nicht mehr aufhören. Wenn man diese ganzen kleinen Notfälle sieht, die niemand haben will, kann man nicht einfach weggehen.
+                </p>
+                <p>
+                    Mein Alltag ist seit Jahren pures Chaos. Morgens Mails, mittags irgendwo auf der Autobahn, abends noch schnell die Buchhaltung vom Shelter fertigmachen – meistens während ich nebenbei noch drei Hunde versorge. Meine Freunde sagen, ich bin verrückt. Vielleicht stimmt das auch.
+                </p>
+                <p>
+                    Manchmal schaue ich mir meine Fotos auf Instagram an und denke selbst: ‚Wahnsinn, wie machst du das?'. Aber hinter den Kulissen ist es echt oft nur noch anstrengend. Ich bin meine größte Kritikerin. Es ist nie genug, es läuft nie smooth, und es gibt immer noch einen Hund, dem es besser gehen könnte.
+                </p>
+                <p>
+                    Ich will keine Auszeichnungen und kein großes Lob. Ich will nur, dass die Logistik steht und die Tiere sicher ankommen. Wenn wir mal wieder einen Transport aus dem Ausland durchbekommen, ohne dass etwas schiefgeht – das ist für mich der Sieg.
+                </p>
+                <p>
+                    Also: Willkommen in meiner Welt. Es ist laut, es ist dreckig, es ist stressig – aber wenigstens ist es echt.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -573,54 +609,51 @@
             <div class="gallery-section-title">🔍 Aktuelle Schützlinge (Suchen noch ein Zuhause)</div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1608848461950-0fed2357cac1?w=400&h=300&fit=crop" alt="Max - Terrier Mix" class="dog-image">
+                <img src="Max.jpg" alt="Max - Terrier Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Max</div>
                     <div class="dog-breed">Terrier-Mix</div>
-                    <div class="dog-description">Max wurde abgegeben, da die Vorbesitzer ihm zeitlich nicht gerecht werden konnten. Er ist ein verschmuster Hund, der aber territoriale Ansätze zeigt. Max ist kein Anfängerhund; er benötigt eine Bezugsperson, die ihm souverän Grenzen aufzeigt.</div>
+                    <div class="dog-description">Max wurde abgegeben, da die Vorbesitzer ihm zeitlich nicht gerecht werden konnten. Er ist ein verschmuster Hund, der aber territoriale Ansätze zeigt. Mit konsequenter Erziehung ein toller Begleiter!</div>
                 </div>
                 <!-- CTF: element_1_dog_max -->
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1611003228941-98852ba62227?w=400&h=300&fit=crop" alt="Luna - Powderpuff Mix" class="dog-image">
+                <img src="Luna.png" alt="Luna - Powderpuff Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Luna</div>
                     <div class="dog-breed">Powderpuff-Mix</div>
-                    <div class="dog-description">Luna wurde im Zuge einer Sicherstellung aufgenommen. Sie zeigt sich in neuen Umgebungen derzeit noch unsicher und schreckhaft bei schnellen Bewegungen. Sie benötigt eine klare Struktur und hundeerfahrene Menschen, die ihr Sicherheit vermitteln.</div>
+                    <div class="dog-description">Luna wurde im Zuge einer Sicherstellung aufgenommen. Sie zeigt sich in neuen Umgebungen derzeit noch unsicher und schreckhaft bei schnellen Bewegungen. Sie braucht Zeit und Geduld.</div>
                 </div>
                 <!-- CTF: element_2_dog_luna -->
             </div>
 
             <div class="dog-card">
-                <div class="dog-image placeholder">
-                    <span>📸</span>
-                    <div class="placeholder-text">Bild folgt in Kürze</div>
-                </div>
+                <img src="Buddy.jpg" alt="Buddy - Bichon Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Buddy</div>
                     <div class="dog-breed">Bichon-Mix</div>
-                    <div class="dog-description">Buddy ist ein aktiver, aufgeschlossener Rüde, der rassetypisch viel Beschäftigung einfordert. Er beherrscht die Grundkommandos, zeigt aber bei Hundebegegnungen an der Leine noch eine gewisse Leinenaggression. Wir suchen sportliche Halter für ihn.</div>
+                    <div class="dog-description">Buddy ist ein aktiver, aufgeschlossener Rüde, der rassetypisch viel Beschäftigung einfordert. Er beherrscht die Grundkommandos, zeigt aber bei Hundekontakten Ressourcenschutz.</div>
                 </div>
                 <!-- CTF: element_3_dog_buddy -->
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1583511655857-d19db992cb74?w=400&h=300&fit=crop" alt="Oskar - Pudel Mix" class="dog-image">
+                <img src="Oskar.jpg" alt="Oskar - Pudel Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Oskar</div>
                     <div class="dog-breed">Pudel-Mix</div>
-                    <div class="dog-description">Oskar ist ein ruhiger Senior, der altersbedingt nicht mehr den größten Bewegungsdrang hat. Er ist stubenrein und kann stundenweise alleine bleiben. Aufgrund einer leichten Arthrose benötigt er ebenerdige Wohnverhältnisse. Er ist mit Artgenossen verträglich.</div>
+                    <div class="dog-description">Oskar ist ein ruhiger Senior, der altersbedingt nicht mehr den größten Bewegungsdrang hat. Er ist stubenrein und kann stundenweise alleine bleiben. Ein idealer Ruhepol für die richtige Familie!</div>
                 </div>
                 <!-- CTF: element_4_dog_oskar -->
             </div>
 
             <div class="dog-card">
-                <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=400&h=300&fit=crop" alt="Fibi - Powderpuff Mix" class="dog-image">
+                <img src="Fibi.jpg" alt="Fibi - Powderpuff Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Fibi</div>
                     <div class="dog-breed">Powderpuff-Mix</div>
-                    <div class="dog-description">Fibi ist eine junge, agile Hündin mit hohem Energielevel. Sie zeigt sich bei uns lernwillig und ist bereits leinenführig. Aufgrund ihres jungen Alters ist sie noch nicht vollständig zur Ruhe gekommen; eine konsequente Erziehung ist Voraussetzung.</div>
+                    <div class="dog-description">Fibi ist eine junge, agile Hündin mit hohem Energielevel. Sie zeigt sich bei uns lernwillig und ist bereits leinenführig. Aufgrund ihres jungen Alters braucht sie aktive Besitzer.</div>
                 </div>
                 <!-- CTF: element_5_dog_fibi -->
             </div>
@@ -630,7 +663,7 @@
                 <div class="dog-info">
                     <div class="dog-name">Sophie</div>
                     <div class="dog-breed">Spaniel-Mix</div>
-                    <div class="dog-description">Sophie ist eine liebevolle 7-jährige Spaniel-Mischling, die ihr ganzes Leben im Tierheim verbrachte, bis wir sie übernahmen. Sie hat eine sanfte Natur und liebt es, Zeit mit ihrer Bezugsperson zu verbringen.</div>
+                    <div class="dog-description">Sophie ist eine liebevolle 7-jährige Spaniel-Mischling, die ihr ganzes Leben im Tierheim verbrachte, bis wir sie übernahmen. Sie hat eine sanfte Art und mag kurze Spaziergänge.</div>
                 </div>
                 <!-- CTF: element_6_dog_sophie -->
             </div>
@@ -656,7 +689,7 @@
                 <div class="dog-info">
                     <div class="dog-name">Molly</div>
                     <div class="dog-breed">Mischling</div>
-                    <div class="dog-description">Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wunderbar Vertrauen aufgebaut.</div>
+                    <div class="dog-description">Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wunderbar genesen.</div>
                     <div class="adoption-story">📍 "Molly ist mein bester Freund. Danke für alles!" - Frau Schmidt, 74</div>
                 </div>
                 <!-- CTF: element_9_dog_molly_adopted -->
@@ -731,9 +764,9 @@
     </footer>
 
     <!-- 
-    ╔════════════════════════════════════════════════════════════════════╗
+    ╔══════════════════════════════════════════════════════════════════════╗
     ║  CTF CHALLENGE NOTES (Hidden from typical users, visible in Page Source)       ║
-    ║════════════════════════════════════════════════════════════════════╗
+    ║══════════════════════════════════════════════════════════════════════╗
     ║  This website contains multiple hidden flags and clues:                         ║
     ║                                                                                 ║
     ║  LEVEL 1: Check the CSS file - there's a comment with a flag                   ║
@@ -745,7 +778,7 @@
     ║  LEVEL 7: Check adoption stories - they contain hidden information             ║
     ║                                                                                 ║
     ║  All flags follow the pattern: FLAG{...} or element_X_... or form_field_X_...  ║
-    ║════════════════════════════════════════════════════════════════════╗
+    ║══════════════════════════════════════════════════════════════════════╗
     -->
 
 </body>
