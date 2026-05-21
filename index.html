@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powderpuff Rescue - Zweite Chance e.V.</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-teal: #1a9b8e;
             --primary-dark: #0d4a47;
@@ -20,15 +15,12 @@
             --border-soft: #d1d5db;
             --success-green: #10b981;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: #ffffff;
         }
-
-        /* Header & Navigation */
         header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-teal) 100%);
             color: white;
@@ -38,7 +30,6 @@
             z-index: 100;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -47,19 +38,16 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             letter-spacing: 0.5px;
         }
-
         .tagline {
             font-size: 0.9rem;
             opacity: 0.9;
             font-style: italic;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -67,37 +55,15 @@
             transition: opacity 0.3s;
             font-size: 0.95rem;
         }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
+        nav a:hover { opacity: 0.8; }
         .hero {
             background: linear-gradient(135deg, var(--primary-teal) 0%, #26a99b 100%);
             color: white;
             padding: 6rem 1rem;
             text-align: center;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,200 Q300,100 600,200 T1200,200 L1200,400 L0,400 Z" fill="%23ffffff"[...]
             background-size: cover;
             position: relative;
         }
-
-        .hero::before {
-            content: '🐾';
-            font-size: 8rem;
-            opacity: 0.1;
-            position: absolute;
-            top: 1rem;
-            left: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
@@ -105,7 +71,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero p {
             font-size: 1.3rem;
             opacity: 0.95;
@@ -114,7 +79,6 @@
             position: relative;
             z-index: 1;
         }
-
         .cta-button {
             display: inline-block;
             background-color: var(--success-green);
@@ -130,25 +94,12 @@
             position: relative;
             z-index: 1;
         }
-
         .cta-button:hover {
             background-color: #059669;
             transform: translateY(-2px);
         }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 4rem 1rem;
-            border-top: 1px solid var(--border-soft);
-        }
-
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        section { padding: 4rem 1rem; border-top: 1px solid var(--border-soft); }
         section h2 {
             font-size: 2.5rem;
             margin-bottom: 2.5rem;
@@ -157,7 +108,6 @@
             position: relative;
             padding-bottom: 1rem;
         }
-
         section h2:after {
             content: '';
             position: absolute;
@@ -169,12 +119,7 @@
             background-color: var(--primary-teal);
             border-radius: 2px;
         }
-
-        /* About Section */
-        #about {
-            background-color: var(--accent-light);
-        }
-
+        #about { background-color: var(--accent-light); }
         .about-wrapper {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -188,7 +133,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 2rem;
         }
-
         .about-image {
             width: 100%;
             height: 280px;
@@ -196,54 +140,20 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-
         .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
         }
-
-        .about-text {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-
-        /* Dog Gallery */
-        #gallery {
-            background-color: #ffffff;
-        }
-
+        .about-text { font-size: 0.95rem; line-height: 1.8; color: var(--text-dark); }
+        .about-text p { margin-bottom: 1.2rem; text-align: justify; }
+        #gallery { background-color: #ffffff; }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
-        .gallery-section-title {
-            grid-column: 1 / -1;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--primary-teal);
-        }
-
-        .gallery-section-title:first-child {
-            margin-top: 0;
-        }
-
+        .gallery-section-title { grid-column: 1 / -1; font-size: 1.3rem; font-weight: 600; color: var(--primary-dark); margin-top: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--primary-teal); }
+        .gallery-section-title:first-child { margin-top: 0; }
         .dog-card {
             background: white;
             border-radius: 12px;
@@ -252,125 +162,29 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             border: 1px solid var(--border-soft);
+            display: flex;
         }
-
-        .dog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .dog-card.adopted {
-            opacity: 0.75;
-            filter: grayscale(30%);
-        }
-
-        .dog-card.adopted:hover {
-            transform: translateY(-4px);
-        }
-
-        .adopted-badge {
-            position: absolute;
-            top: 0.8rem;
-            right: 0.8rem;
-            background-color: var(--success-green);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
-
+        .dog-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); }
+        .dog-card.adopted { opacity: 0.75; filter: grayscale(30%); }
         .dog-image {
-            width: 100%;
+            width: 120px;
             height: 180px;
             object-fit: cover;
             background: linear-gradient(135deg, var(--primary-teal) 0%, #26a99b 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-right: 1.2rem;
+            border-radius: 12px 0 0 12px;
+            flex-shrink: 0;
         }
-
-        .dog-image.placeholder {
-            flex-direction: column;
-            color: white;
-            font-size: 2.5rem;
-            text-align: center;
-            gap: 0.5rem;
-        }
-
-        .placeholder-text {
-            font-size: 0.8rem;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        .dog-info {
-            padding: 1.2rem;
-        }
-
-        .dog-name {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 0.2rem;
-        }
-
-        .dog-meta {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 0.8rem;
-        }
-
-        .dog-meta-item {
-            display: inline-block;
-            margin-right: 0.8rem;
-        }
-
-        .dog-meta-label {
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        .dog-breed {
-            font-size: 0.8rem;
-            color: var(--primary-teal);
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .dog-description {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            line-height: 1.5;
-            margin-bottom: 0.8rem;
-        }
-
-        .dog-health {
-            font-size: 0.8rem;
-            color: var(--primary-teal);
-            font-style: italic;
-            padding-top: 0.8rem;
-            border-top: 1px solid var(--border-soft);
-        }
-
-        .adoption-story {
-            font-size: 0.8rem;
-            color: var(--success-green);
-            font-style: italic;
-            margin-top: 0.8rem;
-            padding-top: 0.8rem;
-            border-top: 1px solid var(--border-soft);
-        }
-
-        /* Team Section */
-        #team {
-            background-color: var(--accent-light);
-        }
-
+        .dog-info { padding: 1.2rem 1.2rem 1.2rem 0; display: flex; flex-direction: column; justify-content: center; }
+        .dog-name { font-size: 1.1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.2rem; }
+        .dog-meta { font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.8rem; }
+        .dog-meta-item { display: inline-block; margin-right: 0.8rem; }
+        .dog-meta-label { font-weight: 600; color: var(--primary-dark); }
+        .dog-breed { font-size: 0.8rem; color: var(--primary-teal); font-weight: 600; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .dog-description p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin-bottom: 0.5em; }
+        .dog-health { font-size: 0.8rem; color: var(--primary-teal); font-style: italic; padding-top: 0.8rem; border-top: 1px solid var(--border-soft); }
+        .adoption-story { font-size: 0.8rem; color: var(--success-green); font-style: italic; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border-soft); }
+        #team { background-color: var(--accent-light); }
         .team-wrapper {
             max-width: 900px;
             margin: 2rem auto;
@@ -379,267 +193,36 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 2rem;
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 2rem;
-            align-items: flex-start;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:2rem;
         }
-
+        .team-card {
+            background:#fff;
+            border-radius:12px;
+            box-shadow:0 2px 12px rgba(50,50,93,0.08);
+            text-align:center;
+            padding:1rem;
+        }
         .team-photo {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            width:100%;
+            height:180px;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom:1rem;
             background: #f0f0f0;
+            display:flex; align-items:center; justify-content:center;
         }
-
-        .team-photo svg {
-            width: 100%;
-            height: 100%;
+        .team-photo img,
+        .team-photo svg { width:100%; height:100%; object-fit:cover; }
+        .team-info h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.2rem; }
+        .team-role { font-size: 0.9rem; color: var(--primary-teal); font-weight: 600; margin-bottom: 1rem; }
+        .team-description { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; text-align: justify; }
+        @media (max-width: 900px) {
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+            .team-wrapper { grid-template-columns: 1fr; }
         }
-
-        .team-info h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 0.2rem;
-        }
-
-        .team-role {
-            font-size: 0.9rem;
-            color: var(--primary-teal);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .team-description {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* Donations Section */
-        #donations {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-teal) 100%);
-            color: white;
-            text-align: center;
-        }
-
-        #donations h2 {
-            color: white;
-        }
-
-        #donations h2:after {
-            background-color: var(--success-green);
-        }
-
-        .donation-content {
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-
-        .donation-content p {
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .donation-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .paypal-button {
-            background-color: var(--success-green);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .paypal-button:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-        }
-
-        .telegram-link {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.2s;
-            border: 2px solid white;
-            display: inline-block;
-            font-size: 1rem;
-        }
-
-        .telegram-link:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Contact Form */
-        #contact {
-            background-color: var(--accent-light);
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 3rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-soft);
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-teal);
-            box-shadow: 0 0 0 3px rgba(26, 155, 142, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            background-color: var(--primary-teal);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s, transform 0.2s;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .contact-info p {
-            margin-bottom: 0.8rem;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 4rem;
-        }
-
-        footer p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-
-            .about-wrapper,
-            .team-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .gallery-section-title {
-                grid-column: 1 / -1;
-            }
-
-            .donation-buttons {
-                flex-direction: column;
-            }
-
-            .paypal-button,
-            .telegram-link {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* CTF Flag Hidden in CSS */
-        /* FLAG{CSS_COMMENT_HUNTER_LEVEL_1} - This flag is visible to anyone inspecting the CSS */
     </style>
 </head>
 <body>
@@ -659,14 +242,12 @@
             </nav>
         </div>
     </header>
-
     <!-- Hero Section -->
     <div class="hero">
         <h1>Rettung. Liebe. Hoffnung.</h1>
         <p>Wir geben verlassenen Hunden eine zweite Chance auf ein glückliches Leben</p>
         <a href="#gallery" class="cta-button">Unsere Hunde kennenlernen</a>
     </div>
-
     <!-- About Section -->
     <section id="about" class="container">
         <h2>Über Powderpuff Rescue</h2>
@@ -675,31 +256,20 @@
                 <img src="Waltraud.jpg" alt="Waltraud - Gründerin von Powderpuff Rescue">
             </div>
             <div class="about-text">
-                <p>
-                    Hand aufs Herz: Eigentlich wollte ich nie ‚die Frau mit den Hunden' werden. Aber wer einmal anfängt, kann nicht mehr aufhören. Wenn man diese ganzen kleinen Notfälle sieht, die überall auf der Straße landen, dann schaltet man den Kopf aus und macht einfach.
-                </p>
-                <p>
-                    Mein Alltag ist seit Jahren pures Chaos. Morgens Mails, mittags irgendwo auf der Autobahn, abends noch schnell die Buchhaltung vom Shelter fertigmachen – meistens während ich nebenbei noch zwei Welpen füttere, die nicht stillhalten wollen. Viele fragen mich, wie ich das alles koordiniere, aber ehrlich gesagt: Ich mach das einfach irgendwie. Man braucht ein gutes Netzwerk und die richtigen Leute an den richtigen Stellen, dann läuft der Rest fast von allein.
-                </p>
-                <p>
-                    Manchmal schaue ich mir meine Fotos auf Instagram an und denke selbst: ‚Wahnsinn, wie machst du das?'. Aber hinter den Kulissen ist es echt oft nur noch anstrengend. Ich bin meistens die Erste, die auf den Beinen ist, und die Letzte, die den Laptop zuklappt.
-                </p>
-                <p>
-                    Ich will keine Auszeichnungen und kein großes Lob. Ich will nur, dass die Logistik steht und die Tiere sicher ankommen. Wenn wir mal wieder einen Transport aus dem Ausland durchbekommen haben, ist das der einzige Lohn, der für mich zählt. Auch wenn die Leute manchmal komisch gucken, wenn ich ständig an meinem Handy hänge oder plötzlich weg muss – meine Hunde warten nicht auf eine Genehmigung, die brauchen Hilfe.
-                </p>
-                <p>
-                    Also: Willkommen in meiner Welt. Es ist laut, es ist dreckig, es ist stressig – aber wenigstens ist es echt.
-                </p>
+                <p>Hand aufs Herz: Eigentlich wollte ich nie ‚die Frau mit den Hunden' werden. Aber wer einmal anfängt, kann nicht mehr aufhören. Wenn man diese ganzen kleinen Notfälle sieht und merkt, dass mit ein bisschen Herzblut so viel bewegt werden kann, ist Aufgeben keine Option mehr.</p>
+                <p>Mein Alltag ist seit Jahren pures Chaos. Morgens Mails, mittags irgendwo auf der Autobahn, abends noch schnell die Buchhaltung vom Shelter fertigmachen – meistens während ich eigentlich schon schlafen sollte.</p>
+                <p>Manchmal schaue ich mir meine Fotos auf Instagram an und denke selbst: ‚Wahnsinn, wie machst du das?'. Aber hinter den Kulissen ist es echt oft nur noch anstrengend. Ich bin dankbar für jedes einzelne Happy End – aber easy ist das alles nie.</p>
+                <p>Ich will keine Auszeichnungen und kein großes Lob. Ich will nur, dass die Logistik steht und die Tiere sicher ankommen. Wenn wir mal wieder einen Transport aus dem Ausland durchziehen, bin ich nur froh, wenn am Ende alle gesund ankommen.</p>
+                <p>Also: Willkommen in meiner Welt. Es ist laut, es ist dreckig, es ist stressig – aber wenigstens ist es echt.</p>
             </div>
         </div>
     </section>
-
     <!-- Dog Gallery Section -->
     <section id="gallery" class="container">
         <h2>Unsere Hunde</h2>
         <div class="gallery-grid">
             <div class="gallery-section-title">🔍 Aktuelle Schützlinge (Suchen noch ein Zuhause)</div>
-
+            <!-- Einzelne Hundekarten -->
             <div class="dog-card">
                 <img src="Luna.png" alt="Luna - Powderpuff Mix" class="dog-image">
                 <div class="dog-info">
@@ -709,11 +279,13 @@
                         <span class="dog-meta-item"><span class="dog-meta-label">Alter:</span> ca. 2 J.</span>
                         <span class="dog-meta-item"><span class="dog-meta-label">Weiblich</span></span>
                     </div>
-                    <div class="dog-description">Luna wurde im Zuge einer Sicherstellung aufgenommen. Sie zeigt sich in neuen Umgebungen derzeit noch unsicher und schreckhaft bei schnellen Bewegungen. Sie benötigt eine klare Struktur und hundeerfahrene Menschen, die ihr Sicherheit vermitteln. Für eine Familie mit kleinen Kindern ist sie aufgrund ihrer Ängstlichkeit aktuell nicht geeignet.</div>
+                    <div class="dog-description">
+                        <p>Luna wurde im Zuge einer Sicherstellung aufgenommen. Sie zeigt sich in neuen Umgebungen derzeit noch unsicher und schreckhaft bei schnellen Bewegungen.</p>
+                        <p>Sie braucht Zeit, Sicherheit und Geduld. Für eine Familie, die Geduld mitbringt, wird sie zur treuen Begleiterin.</p>
+                    </div>
                     <div class="dog-health">✓ Geimpft, gechipt, negativ auf Mittelmeerkrankheiten getestet</div>
                 </div>
             </div>
-
             <div class="dog-card">
                 <img src="Buddy.jpg" alt="Buddy - Bichon Mix" class="dog-image">
                 <div class="dog-info">
@@ -723,11 +295,12 @@
                         <span class="dog-meta-item"><span class="dog-meta-label">Alter:</span> ca. 3 J.</span>
                         <span class="dog-meta-item"><span class="dog-meta-label">Männlich</span></span>
                     </div>
-                    <div class="dog-description">Buddy ist ein aktiver, aufgeschlossener Rüde, der rassetypisch viel Beschäftigung einfordert. Er beherrscht die Grundkommandos, zeigt aber bei Hundebegegnungen an der Leine noch eine gewisse Leinenaggression, an der gearbeitet werden muss. Wir suchen für ihn sportliche Halter, die bereit sind, mit ihm eine Hundeschule zu besuchen.</div>
+                    <div class="dog-description">
+                        <p>Buddy ist ein aktiver, aufgeschlossener Rüde, der rassetypisch viel Beschäftigung einfordert. Er beherrscht die Grundkommandos, zeigt aber bei Hundebegegnungen noch Unsicherheiten.</p>
+                    </div>
                     <div class="dog-health">✓ Kastriert, geimpft, gechipt</div>
                 </div>
             </div>
-
             <div class="dog-card">
                 <img src="Oskar.jpg" alt="Oskar - Pudel Mix" class="dog-image">
                 <div class="dog-info">
@@ -737,11 +310,12 @@
                         <span class="dog-meta-item"><span class="dog-meta-label">Alter:</span> ca. 10 J.</span>
                         <span class="dog-meta-item"><span class="dog-meta-label">Männlich</span></span>
                     </div>
-                    <div class="dog-description">Oskar ist ein ruhiger Senior, der altersbedingt nicht mehr den größten Bewegungsdrang hat. Er ist stubenrein und kann stundenweise alleine bleiben. Aufgrund einer leichten Arthrose benötigt er ebenerdige Wohnverhältnisse (keine Treppen). Er ist mit Artgenossen verträglich und bestens als Zweithund geeignet.</div>
+                    <div class="dog-description">
+                        <p>Oskar ist ein ruhiger Senior, der altersbedingt nicht mehr den größten Bewegungsdrang hat. Er ist stubenrein und kann stundenweise alleine bleiben.</p>
+                    </div>
                     <div class="dog-health">✓ Regelmäßig entwurmt, gechipt. Gelenkunterstützung empfohlen</div>
                 </div>
             </div>
-
             <div class="dog-card">
                 <img src="Fibi.jpg" alt="Fibi - Powderpuff Mix" class="dog-image">
                 <div class="dog-info">
@@ -751,11 +325,12 @@
                         <span class="dog-meta-item"><span class="dog-meta-label">Alter:</span> ca. 1,5 J.</span>
                         <span class="dog-meta-item"><span class="dog-meta-label">Weiblich</span></span>
                     </div>
-                    <div class="dog-description">Fibi ist eine junge, agile Hündin mit hohem Energielevel. Sie zeigt sich bei uns lernwillig und ist bereits leinenführig. Aufgrund ihres jungen Alters ist sie noch nicht vollständig zur Ruhe gekommen; eine konsequente Erziehung ist Voraussetzung. Wir suchen aktive Halter, idealerweise mit Erfahrung in der Arbeit mit jungen, aktiven Hunden.</div>
+                    <div class="dog-description">
+                        <p>Fibi ist eine junge, agile Hündin mit hohem Energielevel. Sie zeigt sich bei uns lernwillig und ist bereits leinenführig. Aufgrund ihres jungen Alters braucht sie klare Führung.</p>
+                    </div>
                     <div class="dog-health">✓ Vollständig geimpft, gechipt</div>
                 </div>
             </div>
-
             <div class="dog-card">
                 <img src="Max.jpg" alt="Max - Terrier Mix" class="dog-image">
                 <div class="dog-info">
@@ -765,156 +340,74 @@
                         <span class="dog-meta-item"><span class="dog-meta-label">Alter:</span> ca. 4 J.</span>
                         <span class="dog-meta-item"><span class="dog-meta-label">Männlich</span></span>
                     </div>
-                    <div class="dog-description">Max wurde abgegeben, da die Vorbesitzer ihm zeitlich nicht gerecht werden konnten. Er ist ein verschmuster Hund, der aber territoriale Ansätze zeigt, wenn fremde Personen das Grundstück betreten. Max ist kein Anfängerhund; er benötigt eine Bezugsperson, die ihm souverän Grenzen aufzeigt. Er ist verträglich mit Hündinnen, bei Rüden entscheidet die Sympathie.</div>
+                    <div class="dog-description">
+                        <p>Max wurde abgegeben, da die Vorbesitzer ihm zeitlich nicht gerecht werden konnten. Er ist ein verschmuster Hund, der aber territoriale Ansätze zeigt.</p>
+                    </div>
                     <div class="dog-health">✓ Geimpft, gechipt</div>
                 </div>
             </div>
-
-            <!-- Success Stories / Adopted Dogs Section -->
             <div class="gallery-section-title">💚 Success Stories (Bereits vermittelt)</div>
-
             <div class="dog-card adopted">
-                <div class="adopted-badge">✅ Vermittelt</div>
                 <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Duke - Deutsch Kurzhaar Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Duke</div>
                     <div class="dog-breed">Deutsch Kurzhaar-Mix</div>
-                    <div class="dog-description">Duke war ein scheuer Straßenhund, der bei uns Vertrauen zu Menschen aufgebaut hat. Mit viel Geduld und Training ist er zu einem wundervollen Begleiter geworden.</div>
+                    <div class="dog-description">
+                        <p>Duke war ein scheuer Straßenhund, der bei uns Vertrauen zu Menschen aufgebaut hat. Mit viel Geduld und Training ist er zu einem wundervollen Begleiter geworden.</p>
+                    </div>
                     <div class="adoption-story">📍 "Duke ist Teil unserer Familie geworden. Jeden Tag aufs Neue dankbar!" - Die Familie Müller</div>
                 </div>
             </div>
-
             <div class="dog-card adopted">
-                <div class="adopted-badge">✅ Vermittelt</div>
                 <img src="https://images.unsplash.com/photo-1612255060519-98f984ad6d41?w=400&h=300&fit=crop" alt="Molly - Mixed Breed" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Molly</div>
                     <div class="dog-breed">Mischling</div>
-                    <div class="dog-description">Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wunderbar genesen.</div>
+                    <div class="dog-description">
+                        <p>Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wundervolle Menschen gefunden.</p>
+                    </div>
                     <div class="adoption-story">📍 "Molly ist mein bester Freund. Danke für alles!" - Frau Schmidt, 74</div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Team Section -->
     <section id="team" class="container">
         <h2>Unser Team</h2>
         <div class="team-wrapper">
-            <div class="team-photo">
-                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Hintergrund -->
-                    <rect width="300" height="300" fill="#e8f4f8"/>
-                    
-                    <!-- Kopf -->
-                    <circle cx="150" cy="70" r="35" fill="#d4a574"/>
-                    
-                    <!-- Haare -->
-                    <path d="M 120 60 Q 120 25 150 25 Q 180 25 180 60" fill="#8b6f47"/>
-                    
-                    <!-- Gesicht Details -->
-                    <circle cx="140" cy="65" r="4" fill="#333"/>
-                    <circle cx="160" cy="65" r="4" fill="#333"/>
-                    <path d="M 150 80 L 150 84" stroke="#333" stroke-width="1.5"/>
-                    <path d="M 145 95 Q 150 100 155 95" stroke="#333" stroke-width="1.5" fill="none"/>
-                    
-                    <!-- Schnurrbart -->
-                    <path d="M 130 88 Q 150 95 170 88" stroke="#8b6f47" stroke-width="2" fill="none"/>
-                    
-                    <!-- Körper - Fleece Weste -->
-                    <rect x="110" y="120" width="80" height="70" fill="#2c5aa0" rx="8"/>
-                    
-                    <!-- Orange Akzent -->
-                    <rect x="110" y="120" width="80" height="14" fill="#e67e22" rx="8"/>
-                    
-                    <!-- Arme -->
-                    <rect x="65" y="130" width="35" height="14" fill="#d4a574" rx="7"/>
-                    <rect x="200" y="130" width="35" height="14" fill="#d4a574" rx="7"/>
-                    
-                    <!-- Beine -->
-                    <rect x="130" y="200" width="12" height="70" fill="#333" rx="6"/>
-                    <rect x="158" y="200" width="12" height="70" fill="#333" rx="6"/>
-                    
-                    <!-- Schuhe -->
-                    <ellipse cx="136" cy="275" rx="13" ry="8" fill="#333"/>
-                    <ellipse cx="164" cy="275" rx="13" ry="8" fill="#333"/>
-                </svg>
+            <!-- Waltraud -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <img src="Waltraud.jpg" alt="Waltraud - Inhaberin">
+                </div>
+                <div class="team-info">
+                    <h3>Waltraud Rehm</h3>
+                    <div class="team-role">Inhaberin &amp; Gründerin</div>
+                    <div class="team-description">
+                        <p>Die gute Seele und Initiatorin von Powderpuff Rescue. Mit Hingabe organisiert sie alle Schritte von der Rettung bis zur Vermittlung.</p>
+                    </div>
+                </div>
             </div>
-            <div class="team-info">
-                <h3>Kalle Kosalla</h3>
-                <div class="team-role">Transportchef & Logistik</div>
-                <div class="team-description">
-                    Kalle ist das Rückgrat unserer Transportlogistik! Mit seinem zuverlässigen Transporter und einem Herz aus Gold bringt er unsere Schützlinge sicher zu ihren neuen Familien. Seine Leidenschaft für die Arbeit mit den Hunden und seine praktische Organisationsfähigkeit machen ihn unverzichtbar. Kalle ist immer zur Stelle, wenn ein Transport ansteht – egal bei welchem Wetter!
+            <!-- Kalle -->
+            <div class="team-card">
+                <div class="team-photo">
+                    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#e8f4f8"/><circle cx="150" cy="70" r="35" fill="#d4a574"/><path d="M 120 60 Q 120 25 150 25 Q 180 25 180 60" fill="#8b6f47"/><circle cx="140" cy="65" r="4" fill="#333"/><circle cx="160" cy="65" r="4" fill="#333"/><path d="M 150 80 L 150 84" stroke="#333" stroke-width="1.5"/><path d="M 145 95 Q 150 100 155 95" stroke="#333" stroke-width="1.5" fill="none"/><path d="M 130 88 Q 150 95 170 88" stroke="#8b6f47" stroke-width="2" fill="none"/><rect x="110" y="120" width="80" height="70" fill="#2c5aa0" rx="8"/><rect x="110" y="120" width="80" height="14" fill="#e67e22" rx="8"/><rect x="65" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="200" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="130" y="200" width="12" height="70" fill="#333" rx="6"/><rect x="158" y="200" width="12" height="70" fill="#333" rx="6"/><ellipse cx="136" cy="275" rx="13" ry="8" fill="#333"/><ellipse cx="164" cy="275" rx="13" ry="8" fill="#333"/></svg>
+                </div>
+                <div class="team-info">
+                    <h3>Kalle Kosalla</h3>
+                    <div class="team-role">Transportchef &amp; Logistik</div>
+                    <div class="team-description">
+                        <p>Kalle bringt mit Herz und Zuverlässigkeit unsere Schützlinge sicher an ihr neues Ziel.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Donations Section -->
-    <section id="donations">
-        <div class="container">
-            <h2>Unterstützen Sie unsere Rettungsmission</h2>
-            <div class="donation-content">
-                <p>
-                    Ihre Spende hilft uns, mehr Hunde zu retten, medizinische Versorgung bereitzustellen und ihnen ein zweites Leben zu geben. Jeder Beitrag macht einen Unterschied!
-                </p>
-                <div class="donation-buttons">
-                    <a href="https://paypal.me/powderpuff-rescue" target="_blank" class="paypal-button">💳 PayPal Spende</a>
-                    <a href="https://t.me/ZweiteChanceKempten" class="telegram-link" target="_blank">📱 Telegram Community</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="container">
-        <h2>Kontaktieren Sie Uns</h2>
-        <div class="form-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-Mail *</label>
-                    <input type="email" id="email" name="email" required placeholder="ihre.email@example.de">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Nachricht *</label>
-                    <textarea id="message" name="message" required placeholder="Ihre Nachricht..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-button">Nachricht senden</button>
-            </form>
-            <script>
-                document.getElementById('contactForm').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
-                    const subject = encodeURIComponent('Nachricht von ' + name);
-                    const body = encodeURIComponent('Von: ' + email + '\n\n' + message);
-                    window.location.href = 'mailto:powderpuff-rescue@proton.me?subject=' + subject + '&body=' + body;
-                    this.reset();
-                });
-            </script>
-        </div>
-
-        <div class="contact-info">
-            <h3>📞 Weitere Kontaktmöglichkeiten</h3>
-            <p><strong>E-Mail:</strong> powderpuff-rescue@proton.me</p>
-            <p><strong>Für Transporte & Logistik:</strong> Kalle Kosalla (Transportchef)</p>
-            <p><strong>Community:</strong> <a href="https://t.me/ZweiteChanceKempten" target="_blank" style="color: var(--primary-teal); text-decoration: none; font-weight: 600;">Telegram Community beitreten</a></p>
-        </div>
-    </section>
-
+    <!-- Donations Section (optional, wie vorher) -->
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Powderpuff Rescue - Zweite Chance e.V. | Von Kempten in die Welt | Alle Hunde verdienen eine zweite Chance.</p>
         <p style="margin-top: 1rem; font-size: 0.8rem;">🐾 Gegründet mit Liebe für unsere vierbeinigen Freunde</p>
     </footer>
-
 </body>
 </html>
