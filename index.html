@@ -223,62 +223,46 @@
         .team-role { font-size: 0.9rem; color: var(--primary-teal); font-weight: 600; margin-bottom: 1rem; }
         .team-description { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; text-align: justify; }
 
-        #telegram { background-color: #ffffff; text-align: center; }
-        .telegram-container {
+        /* Anpassung für einheitliches Box-Design und Abstände */
+        #telegram { background-color: #ffffff; text-align: center; padding: 5rem 1rem 3rem 1rem; }
+        #donations { background-color: var(--accent-light); text-align: center; padding: 5rem 1rem; border-top: 1px solid var(--border-soft); }
+        
+        .action-container {
             max-width: 600px;
             margin: 0 auto;
-            background: var(--accent-light);
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-soft);
         }
-        .telegram-icon { font-size: 3rem; margin-bottom: 1rem; display: inline-block; }
-        .telegram-text { font-size: 1rem; color: var(--text-dark); margin-bottom: 1.5rem; }
-        .telegram-button {
-            display: inline-block;
-            background-color: var(--telegram-blue);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .telegram-button:hover { background-color: #0077b3; transform: translateY(-2px); }
+        #telegram .action-container { background: var(--accent-light); }
+        #donations .action-container { background: #ffffff; }
 
-        /* Styles für die neue Spenden Sektion */
-        #donations { background-color: var(--accent-light); text-align: center; }
-        .donation-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-soft);
-        }
-        .donation-text { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1.5rem; }
-        .paypal-button {
+        .action-icon { font-size: 3rem; margin-bottom: 1rem; display: inline-block; }
+        .action-text { font-size: 1rem; color: var(--text-dark); margin-bottom: 2rem; line-height: 1.6; }
+        
+        /* Harmonisiertes Button-Design */
+        .action-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            background-color: var(--paypal-gold);
-            color: var(--paypal-blue);
-            padding: 0.8rem 2.5rem;
-            border-radius: 25px; /* Typischer abgerundeter PayPal Style */
+            padding: 0.9rem 2.5rem;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 1.1rem;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .paypal-button:hover {
-            background-color: #f2ba36;
+        .action-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
+        .btn-telegram { background-color: var(--telegram-blue); color: white; }
+        .btn-telegram:hover { background-color: #0077b3; }
+        .btn-paypal { background-color: var(--paypal-gold); color: var(--paypal-blue); font-style: italic; }
+        .btn-paypal:hover { background-color: #f2ba36; }
 
         footer {
             background-color: var(--primary-dark);
@@ -306,7 +290,6 @@
                 <a href="#team">Team</a>
                 <a href="#telegram">Telegram</a>
                 <a href="#donations">Spenden</a>
-                <a href="#contact">Kontakt</a>
             </nav>
         </div>
     </header>
@@ -412,85 +395,8 @@
             </div>
             <div class="gallery-section-title">💚 Success Stories (Bereits vermittelt)</div>
             <div class="dog-card adopted">
-                <img src="" alt="Duke - Deutsch Kurzhaar Mix" class="dog-image">
+                <img src="Duke.jpg" alt="Duke - Deutsch Kurzhaar Mix mit Familie" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Duke</div>
                     <div class="dog-breed">Deutsch Kurzhaar-Mix</div>
-                    <div class="dog-description">
-                        <p>Duke war ein scheuer Straßenhund, der bei uns Vertrauen zu Menschen aufgebaut hat. Mit viel Geduld und Training ist er zu einem wundervollen Begleiter geworden.</p>
-                    </div>
-                    <div class="adoption-story">📍 "Duke ist Teil unserer Familie geworden. Jeden Tag aufs Neue dankbar!" - Die Familie Müller</div>
-                </div>
-            </div>
-            <div class="dog-card adopted">
-                <img src="https://images.unsplash.com/photo-1612255060519-98f984ad6d41?w=400&h=300&fit=crop" alt="Molly - Mixed Breed" class="dog-image">
-                <div class="dog-info">
-                    <div class="dog-name">Molly</div>
-                    <div class="dog-breed">Mischling</div>
-                    <div class="dog-description">
-                        <p>Molly war eine unterernährte und verletzte Hündin, die wir von einem Vermehrerhof retteten. Nach Wochen der Pflege und Rehabilitation hat sie wundervolle Menschen gefunden.</p>
-                    </div>
-                    <div class="adoption-story">📍 "Molly ist mein bester Freund. Danke für alles!" - Frau Schmidt, 74</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="team" class="container">
-        <h2>Unser Team</h2>
-        <div class="team-wrapper">
-            <div class="team-card">
-                <div class="team-photo">
-                    <img src="Waltraud.jpg" alt="Waltraud - Inhaberin">
-                </div>
-                <div class="team-info">
-                    <h3>Waltraud Rehm</h3>
-                    <div class="team-role">Inhaberin &amp; Gründerin</div>
-                    <div class="team-description">
-                        <p>Die gute Seele und Initiatorin von Powderpuff Rescue. Mit Hingabe organisiert sie alle Schritte von der Rettung bis zur Vermittlung.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-photo">
-                    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#e8f4f8"/><circle cx="150" cy="70" r="35" fill="#d4a574"/><path d="M 120 60 Q 120 25 150 25 Q 180 25 180 60" fill="#8b6f47"/><circle cx="140" cy="65" r="4" fill="#333"/><circle cx="160" cy="65" r="4" fill="#333"/><path d="M 150 80 L 150 84" stroke="#333" stroke-width="1.5"/><path d="M 145 95 Q 150 100 155 95" stroke="#333" stroke-width="1.5" fill="none"/><path d="M 130 88 Q 150 95 170 88" stroke="#8b6f47" stroke-width="2" fill="none"/><rect x="110" y="120" width="80" height="70" fill="#2c5aa0" rx="8"/><rect x="110" y="120" width="80" height="14" fill="#e67e22" rx="8"/><rect x="65" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="200" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="130" y="200" width="12" height="70" fill="#333" rx="6"/><rect x="158" y="200" width="12" height="70" fill="#333" rx="6"/><ellipse cx="136" cy="275" rx="13" ry="8" fill="#333"/><ellipse cx="164" cy="275" rx="13" ry="8" fill="#333"/></svg>
-                </div>
-                <div class="team-info">
-                    <h3>Kalle Kosalla</h3>
-                    <div class="team-role">Transportchef &amp; Logistik</div>
-                    <div class="team-description">
-                        <p>Kalle bringt mit Herz und Zuverlässigkeit unsere Schützlinge sicher an ihr neues Ziel.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="telegram" class="container">
-        <h2>Unser Telegram-Kanal</h2>
-        <div class="telegram-container">
-            <div class="telegram-icon">📢</div>
-            <p class="telegram-text">
-                Bleibe immer up to date! In unserem offiziellen Telegram-Kanal teilen wir exklusive Updates zu neuen Transporten, Notfällen direkt von der Straße und Live-Berichten aus dem Shelter.
-            </p>
-            <a href="https://t.me/powderpuff_rescue_ctf_channel" class="telegram-button" target="_blank">Kanal beitreten</a>
-        </div>
-    </section>
-
-    <section id="donations" class="container">
-        <h2>Unterstütze unsere Arbeit</h2>
-        <div class="donation-container">
-            <p class="donation-text">
-                Jeder Euro hilft uns, Futter, medizinische Versorgung und sichere Transporte für unsere Hunde zu finanzieren. Vielen Dank für deine Hilfe!
-            </p>
-            <a href="https://paypal.me/Powderpuff-Rescue" class="paypal-button" target="_blank">
-                <span>PayPal</span> Spenden
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Powderpuff Rescue - Zweite Chance e.V. | Von Kempten in die Welt | Alle Hunde verdienen eine zweite Chance.</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem;">🐾 Gegründet mit Liebe für unsere vierbeinigen Freunde</p>
-    </footer>
-</body>
-</html>
+                    <div class="dog-description
