@@ -14,6 +14,7 @@
             --text-light: #6b7280;
             --border-soft: #d1d5db;
             --success-green: #10b981;
+            --telegram-blue: #0088cc; /* Zusätzliche Farbe für das Telegram-Branding */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -219,6 +220,50 @@
         .team-info h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.2rem; }
         .team-role { font-size: 0.9rem; color: var(--primary-teal); font-weight: 600; margin-bottom: 1rem; }
         .team-description { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; text-align: justify; }
+
+        /* Styles für die neue Telegram Sektion */
+        #telegram { background-color: #ffffff; text-align: center; }
+        .telegram-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--accent-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-soft);
+        }
+        .telegram-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .telegram-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        .telegram-button {
+            display: inline-block;
+            background-color: var(--telegram-blue);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .telegram-button:hover {
+            background-color: #0077b3;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
         @media (max-width: 900px) {
             .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
             .team-wrapper { grid-template-columns: 1fr; }
@@ -226,7 +271,6 @@
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header>
         <div class="header-container">
             <div>
@@ -237,18 +281,16 @@
                 <a href="#about">Über Uns</a>
                 <a href="#gallery">Unsere Hunde</a>
                 <a href="#team">Team</a>
-                <a href="#donations">Spenden</a>
+                <a href="#telegram">Telegram</a> <a href="#donations">Spenden</a>
                 <a href="#contact">Kontakt</a>
             </nav>
         </div>
     </header>
-    <!-- Hero Section -->
     <div class="hero">
         <h1>Rettung. Liebe. Hoffnung.</h1>
         <p>Wir geben verlassenen Hunden eine zweite Chance auf ein glückliches Leben</p>
         <a href="#gallery" class="cta-button">Unsere Hunde kennenlernen</a>
     </div>
-    <!-- About Section -->
     <section id="about" class="container">
         <h2>Über Powderpuff Rescue</h2>
         <div class="about-wrapper">
@@ -264,12 +306,10 @@
             </div>
         </div>
     </section>
-    <!-- Dog Gallery Section -->
     <section id="gallery" class="container">
         <h2>Unsere Hunde</h2>
         <div class="gallery-grid">
             <div class="gallery-section-title">🔍 Aktuelle Schützlinge (Suchen noch ein Zuhause)</div>
-            <!-- Einzelne Hundekarten -->
             <div class="dog-card">
                 <img src="Luna.png" alt="Luna - Powderpuff Mix" class="dog-image">
                 <div class="dog-info">
@@ -371,11 +411,9 @@
             </div>
         </div>
     </section>
-    <!-- Team Section -->
     <section id="team" class="container">
         <h2>Unser Team</h2>
         <div class="team-wrapper">
-            <!-- Waltraud -->
             <div class="team-card">
                 <div class="team-photo">
                     <img src="Waltraud.jpg" alt="Waltraud - Inhaberin">
@@ -388,7 +426,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Kalle -->
             <div class="team-card">
                 <div class="team-photo">
                     <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#e8f4f8"/><circle cx="150" cy="70" r="35" fill="#d4a574"/><path d="M 120 60 Q 120 25 150 25 Q 180 25 180 60" fill="#8b6f47"/><circle cx="140" cy="65" r="4" fill="#333"/><circle cx="160" cy="65" r="4" fill="#333"/><path d="M 150 80 L 150 84" stroke="#333" stroke-width="1.5"/><path d="M 145 95 Q 150 100 155 95" stroke="#333" stroke-width="1.5" fill="none"/><path d="M 130 88 Q 150 95 170 88" stroke="#8b6f47" stroke-width="2" fill="none"/><rect x="110" y="120" width="80" height="70" fill="#2c5aa0" rx="8"/><rect x="110" y="120" width="80" height="14" fill="#e67e22" rx="8"/><rect x="65" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="200" y="130" width="35" height="14" fill="#d4a574" rx="7"/><rect x="130" y="200" width="12" height="70" fill="#333" rx="6"/><rect x="158" y="200" width="12" height="70" fill="#333" rx="6"/><ellipse cx="136" cy="275" rx="13" ry="8" fill="#333"/><ellipse cx="164" cy="275" rx="13" ry="8" fill="#333"/></svg>
@@ -403,8 +440,18 @@
             </div>
         </div>
     </section>
-    <!-- Donations Section (optional, wie vorher) -->
-    <!-- Footer -->
+
+    <section id="telegram" class="container">
+        <h2>Unser Telegram-Kanal</h2>
+        <div class="telegram-container">
+            <div class="telegram-icon">📢</div>
+            <p class="telegram-text">
+                Bleibe immer up to date! In unserem offiziellen Telegram-Kanal teilen wir exklusive Updates zu neuen Transporten, Notfällen direkt von der Straße und Live-Berichten aus dem Shelter.
+            </p>
+            <a href="https://t.me/powderpuff_rescue_channel" class="telegram-button" target="_blank">Kanal beitreten</a>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Powderpuff Rescue - Zweite Chance e.V. | Von Kempten in die Welt | Alle Hunde verdienen eine zweite Chance.</p>
         <p style="margin-top: 1rem; font-size: 0.8rem;">🐾 Gegründet mit Liebe für unsere vierbeinigen Freunde</p>
