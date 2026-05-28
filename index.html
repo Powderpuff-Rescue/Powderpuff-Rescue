@@ -14,7 +14,9 @@
             --text-light: #6b7280;
             --border-soft: #d1d5db;
             --success-green: #10b981;
-            --telegram-blue: #0088cc; /* Zusätzliche Farbe für das Telegram-Branding */
+            --telegram-blue: #0088cc;
+            --paypal-blue: #003087;
+            --paypal-gold: #ffc439;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -221,7 +223,6 @@
         .team-role { font-size: 0.9rem; color: var(--primary-teal); font-weight: 600; margin-bottom: 1rem; }
         .team-description { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; text-align: justify; }
 
-        /* Styles für die neue Telegram Sektion */
         #telegram { background-color: #ffffff; text-align: center; }
         .telegram-container {
             max-width: 600px;
@@ -232,16 +233,8 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-soft);
         }
-        .telegram-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        .telegram-text {
-            font-size: 1rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
+        .telegram-icon { font-size: 3rem; margin-bottom: 1rem; display: inline-block; }
+        .telegram-text { font-size: 1rem; color: var(--text-dark); margin-bottom: 1.5rem; }
         .telegram-button {
             display: inline-block;
             background-color: var(--telegram-blue);
@@ -252,8 +245,38 @@
             font-weight: 600;
             transition: background-color 0.3s, transform 0.2s;
         }
-        .telegram-button:hover {
-            background-color: #0077b3;
+        .telegram-button:hover { background-color: #0077b3; transform: translateY(-2px); }
+
+        /* Styles für die neue Spenden Sektion */
+        #donations { background-color: var(--accent-light); text-align: center; }
+        .donation-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-soft);
+        }
+        .donation-text { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1.5rem; }
+        .paypal-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: var(--paypal-gold);
+            color: var(--paypal-blue);
+            padding: 0.8rem 2.5rem;
+            border-radius: 25px; /* Typischer abgerundeter PayPal Style */
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .paypal-button:hover {
+            background-color: #f2ba36;
             transform: translateY(-2px);
         }
 
@@ -281,7 +304,8 @@
                 <a href="#about">Über Uns</a>
                 <a href="#gallery">Unsere Hunde</a>
                 <a href="#team">Team</a>
-                <a href="#telegram">Telegram</a> <a href="#donations">Spenden</a>
+                <a href="#telegram">Telegram</a>
+                <a href="#donations">Spenden</a>
                 <a href="#contact">Kontakt</a>
             </nav>
         </div>
@@ -388,7 +412,7 @@
             </div>
             <div class="gallery-section-title">💚 Success Stories (Bereits vermittelt)</div>
             <div class="dog-card adopted">
-                <img src="https://images.unsplash.com/photo-1633722715463-d30628519e0f?w=400&h=300&fit=crop" alt="Duke - Deutsch Kurzhaar Mix" class="dog-image">
+                <img src="" alt="Duke - Deutsch Kurzhaar Mix" class="dog-image">
                 <div class="dog-info">
                     <div class="dog-name">Duke</div>
                     <div class="dog-breed">Deutsch Kurzhaar-Mix</div>
@@ -448,7 +472,19 @@
             <p class="telegram-text">
                 Bleibe immer up to date! In unserem offiziellen Telegram-Kanal teilen wir exklusive Updates zu neuen Transporten, Notfällen direkt von der Straße und Live-Berichten aus dem Shelter.
             </p>
-            <a href="https://t.me/powderpuff_rescue_channel" class="telegram-button" target="_blank">Kanal beitreten</a>
+            <a href="https://t.me/powderpuff_rescue_ctf_channel" class="telegram-button" target="_blank">Kanal beitreten</a>
+        </div>
+    </section>
+
+    <section id="donations" class="container">
+        <h2>Unterstütze unsere Arbeit</h2>
+        <div class="donation-container">
+            <p class="donation-text">
+                Jeder Euro hilft uns, Futter, medizinische Versorgung und sichere Transporte für unsere Hunde zu finanzieren. Vielen Dank für deine Hilfe!
+            </p>
+            <a href="https://paypal.me/Powderpuff-Rescue" class="paypal-button" target="_blank">
+                <span>PayPal</span> Spenden
+            </a>
         </div>
     </section>
 
